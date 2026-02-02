@@ -1,0 +1,20 @@
+OK_FORMAT = True
+
+test = {   'name': 'q1.1.1',
+    'points': 1,
+    'suites': [   {   'cases': [   {'code': '>>> isinstance(R_111, np.ndarray)\nTrue', 'failure_message': 'Answer is not a numpy array.', 'hidden': False, 'locked': False, 'points': 0},
+                                   {'code': '>>> R_111.shape == (2, 2)\nTrue', 'failure_message': 'Answer does not have the correct shape.', 'hidden': False, 'locked': False, 'points': 0},
+                                   {   'code': '>>> np.allclose(R_111.T @ R_111, np.eye(2), atol=0.001) and np.allclose(R_111 @ R_111.T, np.eye(2), atol=0.001)\nTrue',
+                                       'failure_message': 'Answer is not a rotation matrix (R^TR = I, RR^T = I).',
+                                       'hidden': False,
+                                       'locked': False,
+                                       'points': 0},
+                                   {   'code': '>>> np.isclose(np.linalg.det(R_111), 1.0, atol=0.001).item()\nTrue',
+                                       'failure_message': 'Answer is not a rotation matrix (det(R) = +1).',
+                                       'hidden': False,
+                                       'locked': False,
+                                       'points': 0}],
+                      'scored': True,
+                      'setup': '',
+                      'teardown': '',
+                      'type': 'doctest'}]}
