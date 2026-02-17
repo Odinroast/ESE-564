@@ -41,6 +41,14 @@
       <geom name="table_collision" type="box" size="0.5 0.5 0.5" class="collision" mass="0.1" />
       <geom name="table_visual" material="default_material" type="box" size="0.5 0.5 0.5" class="visual" />
     </body>
+    <body name="obstacle1" pos="0.4 0.3 0.3">
+      <geom name="obstacle1_collision" type="box" size="0.2 0.1 0.3" class="collision" />
+      <geom name="obstacle1_visual" rgba="0 0 1 1" material="default_material" type="box" size="0.2 0.1 0.3" class="visual" />
+    </body>
+    <body name="obstacle2" pos="0.4 -0.3 0.3">
+      <geom name="obstacle2_collision" type="box" size="0.2 0.1 0.3" class="collision" />
+      <geom name="obstacle2_visual" rgba="0 0 1 1" material="default_material" type="box" size="0.2 0.1 0.3" class="visual" />
+    </body>
     <body name="panda_link0" childclass="robot" pos="0.0 0.0 0.0">
       <freejoint name="floating_base" />
       <geom name="panda_link0_collision" type="mesh" mesh="link0.obj" class="collision" />
@@ -106,7 +114,7 @@
     </body>
   </worldbody>
 
-<actuator>
+  <actuator>
     <position name="panda_joint1_pos" joint="panda_joint1" kp="1000" forcerange="-87.00000000 87.00000000" forcelimited="true" ctrlrange="-2.9671 2.9671" ctrllimited="true" class="robot" />
     <position name="panda_joint2_pos" joint="panda_joint2" kp="1000" forcerange="-87.00000000 87.00000000" forcelimited="true" ctrlrange="-1.8326 1.8326" ctrllimited="true" class="robot" />
     <position name="panda_joint3_pos" joint="panda_joint3" kp="1000"  forcerange="-87.00000000 87.00000000"forcelimited="true" ctrlrange="-2.9671 2.9671" ctrllimited="true" class="robot" />
@@ -126,6 +134,9 @@
   </actuator>
 
   <contact>
+    <exclude body1="table" body2="obstacle1" />
+    <exclude body1="table" body2="obstacle2" />
+    <exclude body1="table" body2="panda_link0" />
     <exclude body1="panda_link0" body2="panda_link1" />
     <exclude body1="panda_link1" body2="panda_link2" />
     <exclude body1="panda_link2" body2="panda_link3" />
