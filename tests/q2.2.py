@@ -1,15 +1,13 @@
 OK_FORMAT = True
 
 test = {   'name': 'q2.2',
-    'points': 20,
-    'suites': [   {   'cases': [   {   'code': '>>> net = FCNN_11(23, 7, 32, 2)\n'
-                                               ">>> env = gymnasium.make('Pusher-v5')\n"
-                                               '>>> X_normalizer = Normalizer_12(X)\n'
-                                               '>>> Y_normalizer = Normalizer_12(Y)\n'
-                                               '>>> rewards = run_policy_22(net, env, X_normalizer, Y_normalizer, seed=0)\n'
-                                               '>>> np.issubdtype(type(rewards), np.floating) or np.issubdtype(type(rewards), np.integer)\n'
+    'points': 10,
+    'suites': [   {   'cases': [   {   'code': ">>> goal = 'a'\n"
+                                               ">>> parents = {'a': 'b', 'b': 'c', 'c': 'd', 'd': None}\n"
+                                               '>>> plan = retrace_plan_22(goal, parents)\n'
+                                               ">>> plan == ['d', 'c', 'b', 'a']\n"
                                                'True',
-                                       'failure_message': 'Does not return a scalar reward.',
+                                       'failure_message': "The expected plan was ['d', 'c', 'b', 'a']",
                                        'hidden': False,
                                        'locked': False,
                                        'points': 0}],
