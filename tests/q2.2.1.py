@@ -1,9 +1,9 @@
 OK_FORMAT = True
 
-test = {   'name': 'q1.3.4',
-    'points': 5,
-    'suites': [   {   'cases': [   {   'code': '>>> type(plan_134) == list and all((type(node) == tuple and len(node) == 2 for node in plan_134))\nTrue',
-                                       'failure_message': 'Answer is not a list of 2-tuples',
+test = {   'name': 'q2.2.1',
+    'points': 2.5,
+    'suites': [   {   'cases': [   {   'code': '>>> u = (0, 0)\n>>> v = (1, 1)\n>>> isinstance(eight_connected_cost_221(u, v), (int, float))\nTrue',
+                                       'failure_message': 'The function does not return a scalar cost.',
                                        'hidden': False,
                                        'locked': False,
                                        'points': 0}],

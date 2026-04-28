@@ -1,9 +1,9 @@
 OK_FORMAT = True
 
-test = {   'name': 'q1.2.4.1',
+test = {   'name': 'q1.3.2.2',
     'points': 0.5,
-    'suites': [   {   'cases': [   {   'code': '>>> type(v_124) == tuple and len(v_124) == 2 or v_124 is None\nTrue',
-                                       'failure_message': 'Answer is not a 2-tuple or None',
+    'suites': [   {   'cases': [   {   'code': '>>> type(q_132) == dict and all((type(key) == tuple and len(key) == 2 and isinstance(val, (int, float)) for key, val in q_132.items()))\nTrue',
+                                       'failure_message': 'Answer is not a dictionary mapping 2-tuples to scalars',
                                        'hidden': False,
                                        'locked': False,
                                        'points': 0}],
